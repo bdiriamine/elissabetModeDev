@@ -1,0 +1,332 @@
+<div class="container-fluid" style="background-color:#000 ;">
+  <div class="row no-gutters web"
+    style="    padding-right: 80px;padding-left: 60px;padding-top: 20px;padding-bottom: 20px;">
+    <!-- <div class="col-xl-5 col-lg-5 col-12 col-md-5 col-xs-12 col-xm-12">
+      <div class="account-nav-wrap" style="float: right;width: 50%;height:560px">
+        <div class="list-group nav-account">
+          <a routerLink="/my-account" class="list-group-item list-group-item-action " title="My account"
+            style="height:60px;border: 1px solid #bf7d1f;">
+            My account </a>
+          <a routerLink="/my-bonuses" class="list-group-item list-group-item-action " title="My Bonuses"
+            style="height:60px;border: 1px solid #bf7d1f;">
+            My Bonuses </a>
+          <a routerLink="/kyc-verification" class="list-group-item list-group-item-action  " title="KYC Verification"
+            style="height:60px;border: 1px solid #bf7d1f;">
+            KYC Verification </a>
+          <a routerLink="/change-password" class="list-group-item list-group-item-action " title="Change Password"
+            style="height:60px;border: 1px solid #bf7d1f;">
+            Change Password </a>
+          <a routerLink="/history-financial" class="list-group-item list-group-item-action active" title="Transactions"
+            style="height:60px;border: 1px solid #bf7d1f;">
+            Transactions </a>
+          <a routerLink="/history-betting" class="list-group-item list-group-item-action " title="Casino History"
+            style="height:60px;border: 1px solid #bf7d1f;">
+            Casino History </a>
+
+          <a href="#" class="list-group-item list-group-item-action btn-logout" title="Logout"
+            style="height:60px;border: 1px solid #bf7d1f;">Logout</a>
+
+        </div>
+      </div>
+    </div> -->
+    <app-side-bar></app-side-bar>
+
+    <div class="col-xl-7 col-lg-7 col-12 col-12 col-md-7 col-xs-12 col-xm-12">
+      <div class="content-main touch-left" style="width:100%">
+        <div class="row">
+          <h3 class="page-title">Transactions</h3>
+        </div>
+
+        <div class="row" style="height:40px">
+          <div class="col-md-6">
+            <button class="btn btn-lg btn-primary b1" title="Change Password"
+              style="width:100%;height:100%;color: white;font-size:14px;outline:0 !important"
+            >Deposit/Withdraw </button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" title="Change Password" class="btn btn-lg btn-primary b1"
+              style="width:100%;height:100%;color: white;font-size:14px;outline:0 !important" >
+              Casino/Sport </button>
+          </div>
+        </div>
+        <div class="row"
+          style="height:80px; padding:10px;background-color:rgb(241, 241, 241);margin-top: 1%;margin-left: 0.2%;margin-right: 0.2%;">
+          <form class=" container form-inline form-login flex-lg-nowrap"
+            style="font-family: 'Roboto', sans-serif;font-size: 17px;" novalidate>
+
+            <div>
+              <label for="birthDate" class="form-control-label">Start Date<span></span></label>
+              <div class="left-inner-addon input-container">
+                <input type="date" id="birthDate" placeholder=" " data-view="years" data-date-format="yyyy-mm-dd"
+                  data-language="en" data-auto-close="true" required="required"
+                  class="form-control datepicker-birthday">
+              </div>
+
+            </div>
+            <div style="margin-left: 1%;">
+              <div class="left-inner-addon input-container">
+                <label for="birthDate" class="form-control-label">End Date<span></span></label>
+                <input type="date" id="birthDate" placeholder="End Date" data-view="years" data-date-format="yyyy-mm-dd"
+                  data-language="en" data-auto-close="true" required="required"
+                  class="form-control datepicker-birthday">
+              </div>
+            </div>
+            <div class="left-inner-addon input-container" style="margin-left: 5%;padding-top: 2.7%;">
+              <button type="submit" class="btn btn-lg btn-primary" data-original-title="" title="">search</button>
+            </div>
+
+          </form>
+        </div>
+        <div class="row" style="margin-top:1%">
+          <table class="container" id="table" *ngIf="etat">
+            <thead>
+              <tr>
+                <th> Payement ID </th>
+                <th> Time </th>
+                <th> Statuts </th>
+                <th> Action</th>
+                <th> Amount </th>
+              </tr>
+            </thead>
+            <tbody>
+              <td></td>
+              <td></td>
+              <td>
+                <p>
+                  Casino
+                </p>
+                <p>
+                  Casino
+                </p>
+                <p>
+                  Sport
+                </p>
+                <p>
+                  Sport
+                </p>
+                <p>
+                  Sport
+                </p>
+                <p>
+                  Sport
+                </p>
+                <p>
+                  Casino
+                </p>
+
+              </td>
+
+              <td>
+                <p>
+                  Mise
+                </p>
+                <p>
+                  Gain
+                </p>
+                <p>
+                  Mise
+                </p>
+                <p>
+                  Gain
+                </p>
+                <p>
+                  Remboursement
+                </p>
+                <p>
+                  Mise
+                </p>
+                <p>
+                  Sport
+                </p>
+                <p>
+                  Remboursement
+                </p>
+
+              </td>
+              <!-- <td *ngif="tk.TicketCode!==null">Paris sportif: {{tk.TicketCode}}</td> -->
+
+              <td></td>
+
+
+
+            </tbody>
+
+
+          </table>
+
+          <table class="container" id="table">
+            <thead>
+              <tr>
+                <th> Type </th>
+                <th> Montant </th>
+                <th> Date </th>
+              </tr>
+            </thead>
+
+            <tbody style="background-color: #f5f5f5;">
+              <td>Dépôt
+              </td>
+              <td>
+                Retrait
+              </td>
+              <td style="color: #366405"></td>
+              <td style="color: red;"></td>
+              <td style="color: #366405"> </td>
+              <td style="color: red;"> </td>
+
+
+
+            </tbody>
+
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mobi" style="height:40px">
+    <div class="btn-group" role="group" aria-label="Basic example"
+      style="width: 100%;margin-top: 1%;margin-bottom: 1%;height:30px;padding-right: 15px ;padding-left: 15px;">
+      <button type="button" class="btn btn-secondary b1"
+        style="border: 1px solid BLACK;width:50%;height:50px;background-color: #dc9125;">Deposit/Withdraw </button>
+      <button type="button" class="btn btn-secondary b1"
+        style="border: 1px solid BLACK;width:50%;height:50px;background-color: #dc9125;"> Casino/Sport </button>
+    </div>
+  </div>
+  <div class="row mobi"
+    style=" padding:10px;background-color:rgb(241, 241, 241);margin-top: 1%;margin-left: 0.2%;margin-right: 0.2%;margin-top: 5%;">
+    <form class=" container form-inline form-login flex-lg-nowrap"
+      style="font-family: 'Roboto', sans-serif;font-size: 17px;" novalidate>
+
+      <div>
+        <label for="birthDate" class="form-control-label">Start Date<span></span></label>
+        <div class="left-inner-addon input-container">
+          <input type="date" id="birthDate" placeholder=" " data-view="years" data-date-format="yyyy-mm-dd"
+            data-language="en" data-auto-close="true" required="required" class="form-control datepicker-birthday">
+        </div>
+
+      </div>
+      <div style="margin-left: 1%;">
+        <div class="left-inner-addon input-container">
+          <label for="birthDate" class="form-control-label">End Date<span></span></label>
+          <input type="date" id="birthDate" placeholder="End Date" data-view="years" data-date-format="yyyy-mm-dd"
+            data-language="en" data-auto-close="true" required="required" class="form-control datepicker-birthday">
+        </div>
+      </div>
+      <div class="left-inner-addon input-container" style="margin-left: 5%;padding-top: 2.7%;">
+        <button type="submit" class="btn btn-lg btn-primary" data-original-title="" title="">search</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="row mobi" style="margin-top:5px">
+    <div class="col-xl-12 col-lg-12 col-12">
+      <div class="content-main touch-left">
+        <h3 class="page-title">Transactions</h3>
+        <table class="container" id="table">
+          <thead>
+            <tr>
+              <th> Payement ID </th>
+              <th> Time </th>
+              <th> Statuts </th>
+              <th> Action</th>
+              <th> Amount </th>
+            </tr>
+          </thead>
+          <tbody>
+            <td></td>
+            <td></td>
+            <td>
+              <p>
+                Casino
+              </p>
+              <p>
+                Casino
+              </p>
+              <p>
+                Sport
+              </p>
+              <p>
+                Sport
+              </p>
+              <p>
+                Sport
+              </p>
+              <p>
+                Sport
+              </p>
+              <p>
+                Casino
+              </p>
+
+            </td>
+
+            <td>
+              <p>
+                Mise
+              </p>
+              <p>
+                Gain
+              </p>
+              <p>
+                Mise
+              </p>
+              <p>
+                Gain
+              </p>
+              <p>
+                Remboursement
+              </p>
+              <p>
+                Mise
+              </p>
+              <p>
+                Sport
+              </p>
+              <p>
+                Remboursement
+              </p>
+
+            </td>
+            <!-- <td *ngif="tk.TicketCode!==null">Paris sportif: {{tk.TicketCode}}</td> -->
+
+            <td></td>
+
+
+
+          </tbody>
+
+
+        </table>
+
+        <table class="container" id="table">
+          <thead>
+            <tr>
+              <th> Type </th>
+              <th> Montant </th>
+              <th> Date </th>
+            </tr>
+          </thead>
+
+          <tbody style="background-color: #f5f5f5;">
+            <td>Dépôt
+            </td>
+            <td>
+              Retrait
+            </td>
+            <td style="color: #366405"></td>
+            <td style="color: red;"></td>
+            <td style="color: #366405"> </td>
+            <td style="color: red;"> </td>
+
+
+
+          </tbody>
+
+
+        </table>
+      </div>
+    </div>
+
+  </div>

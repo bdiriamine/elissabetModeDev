@@ -1,0 +1,137 @@
+<div class="container-fluid web" style=" background-color: #171717;">
+    <!-- <div  class="" id="outer" style="width: 100%;margin: 0; background-color: #171717;height: 90px;	outline: none;">
+        <nav  style="margin-top: 2%; padding-left: 25%;line-height: 1;">
+          <ul >
+              <a routerLink="/live" class="active btn-star bal" > 
+                  <li style="font-weight: 600; font-size: 14px; width: 10%"> <span class="top_left"></span>
+                    <img src="../../../assets/ICON 2.svg" alt="black Jack" style="height:30%;width:30%"> 
+                  <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top: 9%;color: rgb(185, 185, 185);"> Live </p> 
+                  </li> 
+              </a>
+              <a  routerLink="/casino">
+                <li  style="padding-left: 1%;font-weight: 600;font-size: 14px;width: 10% " ><img src="../../../assets/ICON 4.svg" alt="black Jack" style="height:30%;width:30%">  
+                  <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top: 14%;color: rgb(185, 185, 185);"> Casino </p> 
+                </li> 
+              </a>      
+              <a  routerLink="/livecasino"  > 
+                <li   style="font-weight: 600;font-size: 14px;width: 10%  "> 
+                  <img src="../../../assets/ICON 6.svg" alt="black Jack" style="height:30%;width:30%;"> 
+                  <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top: 10.5%;color: rgb(185, 185, 185);"> live Casino </p> 
+                </li> 
+              </a>
+              <a routerLink=""  > 
+                <li   style="font-weight: 600;font-size: 14px; width: 10% "> 
+                  <img src="../../../assets/ICON 1.svg" alt="black Jack" style="height:30%;width:30%"> 
+                  <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top: 10.5%;color: rgb(185, 185, 185);"> Sport </p> 
+                </li> 
+              </a>
+              <a routerLink="/virtual"  >
+                <li   style="font-weight: 600;font-size: 14px; width: 10% "> 
+                  <img src="../../../assets/ICON 3.svg" alt="black Jack" style="height:30%;width:30%"> 
+                  <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top: 10.5%;color: rgb(185, 185, 185);"> virtual </p> 
+                </li> 
+                <a routerLink="/results"  >
+                  <li   style="font-weight: 600;font-size: 14px;width: 10%  "> 
+                    <img src="../../../assets/ICON 7.svg" alt="black Jack" style="height:30%;width:30%"> 
+                  <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top:10.5%;color: rgb(185, 185, 185);"> Results </p> 
+                  </li> 
+                </a>
+                <a routerLink="/minigames"  >
+                  <li   style="font-weight: 600;font-size: 14px;width: 10%  "> 
+                    <img src="../../../assets/ICON 8.svg" alt="black Jack" style="height:30%;width:30%">  
+                    <p style="text-align: center;font-size: 15px;padding-top: 1px;font-weight: bold;margin-top:10.5%;color: rgb(185, 185, 185);"> Mini Games </p> 
+                  </li> 
+                </a>
+              </a>
+          </ul>
+      </nav>
+         -->
+  
+  
+    <!-- </div> -->
+    <div class="navv" id="outer" style="background-color: #171717;	outline: none;">
+      <div  [routerLink]="['/live']" class="champ">
+        <img src="../../../assets/ICON 2.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);"> Live
+        </p>
+      </div>
+      <div [routerLink]="['/casino']" class="champ">
+        <img src="../../../assets/ICON 4.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);">
+          Casino </p>
+      </div>
+      <div [routerLink]="['/casino/live']" class="champ">
+        <img src="../../../assets/ICON 6.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);"> Live
+          Casino </p>
+      </div>
+      <div  [routerLink]="['/']" class="champ">
+        <img src="../../../assets/ICON 1.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);"> Sport
+        </p>
+      </div>
+      <div routerLink="/virtual" class="champ">
+        <img src="../../../assets/ICON 3.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);">
+          Virtual </p>
+      </div>
+      <div [routerLink]="['/results']" class="champ">
+        <img src="../../../assets/ICON 7.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);">
+          Results </p>
+      </div>
+      <div [routerLink]="['/minigames']" class="champ">
+        <img src="../../../assets/ICON 8.svg" alt="black Jack" width="30%" height="30%">
+        <p style="text-align: center;font-size: 15px;padding-top: 10px;font-weight: bold;color: rgb(185, 185, 185);"> Mini
+          games </p>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="container-fluid mobi" style="margin: 0;padding: 0;    background-color: #1d1d1d;">
+    <div class=" mobi" id="outer" style="width: 100%;margin: 0;padding: 0; background-color: black;height: 90px;">
+  
+      <div class="inner" style="width:20%;margin-top: 2%;">
+        <button routerLink="/live" class="btn " id="Gm4"
+          style="    background-color: #171717;outline: 0;color: rgb(197, 194, 194);width: 100%;border-radius: 10px;border: 2px solid black;">
+          <img src="../../../assets/ICON 2.svg" alt="black Jack" style="height:50%;width:50%">
+          <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Live </p>
+        </button>
+      </div>
+      <div class="inner" style="width:20%;margin-top: 2%;">
+  
+        <button routerLink="" class="btn " id="Gm4"
+          style="    background-color: #171717;outline: 0;color: rgb(197, 194, 194);width: 100%;border-radius: 10px;border: 2px solid black;">
+          <img src="../../../assets/ICON 1.svg" alt="black Jack" style="height:50%;width:50%">
+          <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Sport </p>
+        </button>
+      </div>
+      <div class="inner" style="width:20%;margin-top: 2%;">
+  
+        <button routerLink="/casino" class="btn " id="Gm4"
+          style="    background-color: #171717;outline: 0;color: rgb(197, 194, 194);width: 100%;border-radius: 10px;border: 2px solid black;">
+          <img src="../../../assets/ICON 4.svg" alt="black Jack" style="height:50%;width:50%">
+          <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Casino </p>
+        </button>
+      </div>
+      <div class="inner" style="width:20%;margin-top: 2%;">
+  
+        <button routerLink="/livecasino" class="btn " id="Gm4"
+          style="    background-color: #171717 ;outline: 0;color: rgb(197, 194, 194);width: 100%;border-radius: 10px;border: 2px solid black;">
+          <img src="../../../assets/ICON 6.svg" alt="black Jack" style="height:50%;width:50%">
+          <p style="font-size: 8px;padding-top: 1px;font-weight: bold;"> liveCasino </p>
+        </button>
+      </div>
+  
+      <div class="inner" style="width:20%;margin-top: 2%;">
+  
+        <button routerLink="/minigames" class="btn " id="Gm4"
+          style="    background-color: #1d1d1d;outline: 0;color: rgb(197, 194, 194);width: 100%;border-radius: 10px;border: 2px solid black;">
+          <img src="../../../assets/ICON 8.svg" alt="black Jack" style="height:50%;width:50%">
+          <p style="text-align: center;font-size: 10px;padding-top: 1px;font-weight: bold;"> Mini Games </p>
+        </button>
+      </div>
+    </div>
+  </div>
+  

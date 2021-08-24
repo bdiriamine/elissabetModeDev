@@ -1,0 +1,51 @@
+<div class="bd" *ngIf="!load"   style="width: 100%;">
+    <div class="loader">
+        <span>Loading...</span>
+      </div>
+</div>
+<div *ngIf="load"  class=" pl-0 pr-0 " style="background-color: #1d1d1d;width: 100%;" >         
+    <div class="wrap-game-listing ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12">
+                    <div class="game-listing-filters" style="margin-top: 27px;">
+                        <div class="game-providers-dropdown col-sm-6 col-md-6 col-12 col-lg-6 offset-sm-6 offset-md-6 offset-lg-6">
+                            <span class="filterby-label"> 								Filter by:							</span> 
+                                <select id="providers-select" class="form-control" >
+                                    <option [value]="item.Provider" *ngFor="let item of provider" >
+                                        {{item.Provider}}
+                                    </option>
+                                </select>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #1d1d1d;width: 100%;">
+        <div class="row row-game-listing" style="width: 100%;">
+            <div class="container" style="width: 100%;">
+                <div class="col-xl-3 col-md-4 col-lg-4 col-6" *ngFor="let tk of games ">
+                    <div data-id="1694" class="item-game" style="  display: block;margin-left: auto;margin-right: auto;" >
+                        <figure class="item-game-thumb">
+                            <img [src]="tk.GameImage" >
+                                <a *ngIf="!username" title="Play Now" class="btn btn-primary item-game-launch">
+                                    <span >Login</span>
+                                </a>
+                                <a *ngIf="username" title="Play Now" class="btn btn-primary item-game-launch">
+                                    <span >Play Now</span>
+                                </a>
+                        </figure> 
+                        <div class="item-game-desc">
+                                <p class="item-game-title" style="font-size: 12px;color: rgb(206, 206, 206);">{{tk.GameName}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

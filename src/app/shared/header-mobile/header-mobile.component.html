@@ -1,0 +1,174 @@
+<div class="container-fluid" style="height: 60px;">
+    <div class=" row divdispkmobile "  style=" color: #292b2c; padding-top: 2%;padding-bottom: 1%; background-color: #1d1d1d;height: 60px;">
+        <div class="col-md-6 col-sm-6 col-6  logo-wrap"   >
+          <a href="#nav-mobile"  onclick="document.getElementById('nav-mobile').style.display='block'"class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up" style="margin-left: 2%;border-radius: 5px;">
+            <i class="fa fa-navicon" ></i>
+          </a>
+    
+          <h1 class="site-logo">
+            <a href="" title="Carthagebet">
+              <img src="../../../assets/logo.png" alt="Carthagebet">
+            </a>
+          </h1>
+        </div>
+        <div class="col-md-6 col-sm-6 col-6 "  >
+          
+            <div  *ngIf="!username" style=" float:right;margin-top: 7px;">
+                <a href="#nav-mobile-user" class="btn-user-trigger btn btn-white-outline btn-sm hidden-lg-up" style="border-radius: 14px;" onclick="document.getElementById('nav-mobile-user').style.display='block'">
+                    <i class="fa fa-user"></i>
+                    Login / Register						</a>
+            </div>
+            <div *ngIf="username" style=" float:right;margin-top: 7px; margin-right: 5%;   background: linear-gradient(
+              0deg
+              ,#d86600 -23%,#fac645,#d86600 123%) !important;">
+                <a href="#user-info" class="btn-user-trigger btn btn-white-outline btn-sm hidden-lg-up" onclick="document.getElementById('user-info').style.display='block'">
+                    <i class="fa fa-user"></i>
+                    {{username}}				</a>
+            </div>
+        </div>
+      </div>
+    
+      <!-- Login Div mobile-->
+      <div id="nav-mobile-user" class="definition divdispkmobile" >
+        <div class="mm-navbar mm-navbar-top mm-navbar-top-1 mm-navbar-size-1 mm-hasbtns" style="height: 40px;background-color: #1a1a1a;">
+          <a class="mm-prev mm-btn mm-hidden"></a><a class="mm-close mm-btn close" onclick="document.getElementById('nav-mobile-user').style.display='none'" href="#mm-0"></a>
+      </div>
+      <br>
+      <form class="form-inline form-login flex-lg-nowrap " style="background-color: #313131; border-bottom: 1px solid rgb(0, 0, 0);" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="left-inner-addon input-container" style="width:100%">
+          <i class="fa fa-user icon" style="color: rgb(250, 198, 69)" ></i>
+          <input type="text" class="form-control login-username input-field" placeholder="Username" required="" style="background-color: #404040; border-color: #404040;color: rgb(165, 165, 165);border-radius: 5px;background-color: white; text-align: center;height:40px;font-size: 14px;" formControlName="username">
+        </div>
+      
+        <div class="left-inner-addon input-container" style="width:100%">
+          <i class="fas fa-lock" style="color: rgb(250, 198, 69); padding-top: 3%;    font-size: 16px;"></i>
+          <input type="password" class="form-control login-password input-field" placeholder="Password" required="" style="background-color: #404040; border-color: #404040;color: rgb(179, 178, 178);background-color: white;border-radius: 5px; text-align: center;height:40px;font-size: 14px;" formControlName="password"> 
+          
+        </div>
+      
+        <button type="submit" class="btn btn-secondary-fancy btn-register  " [disabled]="!loginForm" data-original-title="" title="" style="height:40px;font-size: 14px;color: white;font-weight: 500;">LOGIN</button>
+        <a routerLink="/register"  title="Register" class="btn btn-primary mr-sm-2 mb-sm-0 btn-login-form" style="height:40px;font-size: 14px;font-weight: 500;padding-top: 3%;" onclick="document.getElementById('nav-mobile-user').style.display='none'">Register</a>
+      
+        <span class="login-errors" style="display: none;"></span>
+        
+        <a  routerLink="forgot-password" title="Forgot password?" class="forgot-password-mobile" style="margin-top: 2%;" onclick="document.getElementById('nav-mobile-user').style.display='none'">
+          Forgot password?  </a> 	
+          <span class="login-errors" style="display: none;">Wrong credentials</span>
+      </form>
+    
+      </div>
+    
+        <!-- userinfo-->
+        <div id="user-info" class="definition divdispkmobile" >
+          <div class="mm-navbar mm-navbar-top mm-navbar-top-1 mm-navbar-size-1 mm-hasbtns" style="height: 40px;background-color: #1a1a1a;">
+            <a class="mm-prev mm-btn mm-hidden"></a><a class="mm-close mm-btn close" onclick="document.getElementById('user-info').style.display='none'"></a>
+        </div>
+        <ul class="mm-listview list">
+            <li style="font-size: 15px;">
+            <span class="nav-mobile-user-info">
+              <span class="clear">
+                <b class="js-username"> {{username}}</b>
+                <span class="btn-refresh"><i class="fa fa-refresh"></i></span>
+              </span>
+              
+              <span class="clear">
+                <b>Cash:</b>
+                <span class="js-balance-cash">TND  {{score}}</span>
+              </span>
+      
+            
+      <!--				<span class="clear">
+                <b>Sports Balance:</b>
+                <span class="js-user-balance"></span>
+              </span>
+      -->
+              <span class="clear">
+                <b>Sports Bonus:</b>
+                <span class="js-sports-bonus">TND 0.00</span>
+              </span>
+      
+              <span class="clear">
+                <b>Casino Bonus:</b>
+                <span class="js-casino-bonus">TND 0.00</span>
+              </span>
+      
+      <!--		<span class="clear">
+                <b>Total Balance:</b>
+                <span class="js-user-balance"></span>
+              </span>
+      -->
+            </span>
+          </li>
+                        <li  id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+                <a (click)="gotomyaccount()">
+                  <i class="fa fa-user-circle-o" title="My account"></i>
+                  My account					</a>
+              </li >
+                    <li id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+                <a (click)="gotomybounus()">
+                  <i class="fa fa-money" title="My Bonuses"></i>
+                  My Bonuses					</a>
+              </li>
+                    <li id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+                <a (click)="gotkycVerification()">
+                  <i class="fa fa-thumbs-o-up" title="KYC Verification"></i>
+                  KYC Verification					</a>
+              </li>
+                    <li id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+                <a (click)="gotochangepassword()">
+                  <i class="fa fa-key" title="Change Password"></i>
+                  Change Password					</a>
+              </li>
+                    <li id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+                <a (click)="gotoTransaction()">
+                  <i class="fa fa-list-alt" title="Transactions"></i>
+                  Transactions					</a>
+              </li>
+                    <li id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+                <a (click)="gotoCasinoHistory()">
+                  <i class="fa fa-history" title="Casino History"></i>
+                  Casino History					</a>
+              </li>
+                    <li id="idcoloruserinfo"  onclick="document.getElementById('user-info').style.display='none'">
+            <a class="btn-logout" (click)="exit()" title="Logout">
+              <i class="fa fa-power-off"></i>
+              Logout			</a>
+          </li>
+          </ul>
+        </div>
+    
+      
+    
+    
+      <!-- Button togl left mobile-->
+      <div id="nav-mobile" class=" menuleft  divdispkmobile"  >
+        <div class="mm-navbar mm-navbar-top mm-navbar-top-1 mm-navbar-size-1 mm-hasbtns" style="height: 40px;background-color: #1a1a1a;position: fixed;width: 76%;">
+          <a class="mm-prev mm-btn mm-hidden"></a><a class="mm-close mm-btn close" onclick="document.getElementById('nav-mobile').style.display='none'" href="#mm-0"></a>
+      </div>
+     
+      <div style="background-color: #1c1c1c;height: 93px;">
+            <img src="../../../assets/logo.png" alt="Carthagebet" class="logo-mobile" style="padding-top: 20px;">
+        
+        </div>
+        <div style="background-color: #292b2c;color: rgb(221, 221, 221)">
+          <ul class=" list" style="font-family: 'Roboto', sans-serif; font-weight: 700;font-size: 14px;margin:0;padding:0">
+            <li><a  routerLink="home"  title="aller à la section 1" onclick="document.getElementById('nav-mobile').style.display='none'"> Home				</a></li>
+            <li><a  routerLink=""  title="aller à la section 1" onclick="document.getElementById('nav-mobile').style.display='none'"> Sports Betting				</a></li>
+            <li><a routerLink="/live" title="aller à la section 2" onclick="document.getElementById('nav-mobile').style.display='none'">Live Betting	</a></li>
+            <li><a routerLink="/casino" title="aller à la section 3" onclick="document.getElementById('nav-mobile').style.display='none'">Casino</a></li>
+            <li><a routerLink="/livecasino"title="aller à la section 4" onclick="document.getElementById('nav-mobile').style.display='none'"> Live Casino	</a></li>
+          <!-- -->  <li><a routerLink="/minigames"title="aller à la section 4" onclick="document.getElementById('nav-mobile').style.display='none'"> Mini Games	</a></li>
+            <li><a routerLink="/virtual" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'">Virtual</a></li>
+            <li><a routerLink="" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'">Affiliates</a></li>
+            <li><a routerLink="terms-conditions" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'"> Terms &amp; Conditions</a></li>
+            <li><a href="#mm-2" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'"><span class="Spacer"><i class="fa fa-language" style="color: #d86600;margin-right: 2%;"></i>English				</span></a></li>
+           
+          </ul>
+           <button class="chtbot">
+            <i class="fas fa-robot" style="font-size:27px"></i>
+           </button>
+        </div>
+       
+    
+      </div>
+    </div>

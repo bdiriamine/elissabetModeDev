@@ -1,0 +1,228 @@
+
+@media (min-width: 992px)  { 
+    .web{display: block;}
+    .mobi{display: none  !important;}
+    .ftboby{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 120vh;
+        background: #000;
+        overflow: hidden;
+    }
+    .tl{
+      height: 250px
+    }
+    .tldice2{
+      height: 250px;
+      width:100%;
+    }
+    .tldice{
+      height:160px;
+    }
+    .center
+{
+  width:100%;
+  display: flex;
+}
+
+.card{
+  width:100%;
+  max-width: 22rem;
+  min-height: 14rem;
+  background-color: #fac645;
+  border-radius: 0 7rem;
+  box-shadow: 0 -4px 4px #d86600, 
+               0 4px 4px #fac645;
+}
+.image{
+  width:100%;
+  max-width: 22rem;
+  min-height: 14rem;
+  border-radius: 0 7rem;
+}
+.card__title{
+  color: #86000b;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+p{
+   padding-left: 5rem;
+  padding-bottom: 1rem;
+}
+ames {
+    position: absolute;
+    top: 48%;
+}
+
+.game-card {
+    margin: 17px;
+}
+.flex-container, .c-logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+.c-logo {
+    position: absolute;
+    top: 60%;
+    background-color: transparent;
+    letter-spacing: .2632rem;
+  text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    font-size: 3em;
+    font-weight: bold;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+}
+.c-logo > span {
+    display: block;
+    transform: translateZ(50px) scale(0.6);
+    text-shadow: -2px -1px 2px rgba(150, 150, 150, 1);
+}
+.c-logo:hover:after {
+    transform: translateZ(-100px);
+}
+  }
+  @media (max-width: 991px)  { 
+    .web{display: none;}
+    .mobi{display: block  !important;}
+    .game-card {
+        margin: 53px;
+    }
+    .tl{
+      height: 160px;
+      width:100%;
+    }
+    .tldice2{
+      height: 250px;
+      width:100%;
+    }
+    .tldice{
+      height: 157px;
+      width: 71%;
+
+    }
+    .imgBox{
+      height:250px;
+      margin-bottom: 2%;
+    }
+    .ftboby{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 420vh;
+        background: #000;
+        overflow: hidden;
+    }
+    .center
+{
+  width:100%;
+  display: flex;
+}
+
+.card{
+  width:100%;
+  max-width: 22rem;
+  min-height: 14rem;
+  background-color: #fac645;
+  border-radius: 0 7rem;
+  box-shadow: 0 -4px 4px #d86600, 
+               0 4px 4px #fac645;
+  margin-top: 14%;
+}
+.image{
+  width:100%;
+  max-width: 22rem;
+  min-height: 14rem;
+  border-radius: 0 7rem;
+}
+.card__title{
+  color: #86000b;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+p{
+   padding-left: 5rem;
+  padding-bottom: 1rem;
+}
+ames {
+    position: absolute;
+    top: 48%;
+}
+
+.game-card {
+    margin: 6px;
+}
+.flex-container, .c-logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+}
+.c-logo {
+    position: absolute;
+    top: 60%;
+    background-color: transparent;
+    letter-spacing: .2632rem;
+  text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: bold;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+}
+.c-logo > span {
+    display: block;
+    transform: translateZ(50px) scale(0.6);
+    text-shadow: -2px -1px 2px rgba(150, 150, 150, 1);
+}
+.c-logo:hover:after {
+    transform: translateZ(-100px);
+}
+  }
+  
+.button {
+    position: absolute;
+    width: 250px;
+    left:0;
+    top: 160px;
+    text-align: center;
+    opacity: 0;
+    transition: top 1.5s ease;
+    
+  }
+  
+  .button a {
+    width: 200px;
+    padding: 12px 48px;
+    text-align: center;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    z-index: 1;
+    
+    background: linear-gradient(
+        110deg
+        ,#02a1f9,#29f19c);
+        text-decoration: none;
+  }
+  
+  .game-card:hover .button {
+    opacity: 1;
+   
+  }
+  

@@ -1,0 +1,54 @@
+
+  .example {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+     /* Add the ability to scroll */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .example::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .body{
+    overflow-x:hidden;overflow-y:scroll;
+  }
+  @media screen and (min-width: 808px) {
+    #fileUploadIframe{
+      min-height: 100px;
+      width: 100%; 
+           height: 100%;
+  
+           box-sizing: content-box;  
+    }
+  }
+  @media screen and (max-width: 808px) {
+    #fileUploadIframe{
+  
+      min-height: 100px;
+      width: 100%; 
+           height: 100%;
+  
+           box-sizing: content-box;  
+    }
+    #examples{
+      overflow: hidden;width: 100%;height: 100%;
+    }
+  }
+
+  @media (min-width: 992px)  { 
+    .web{display: block;}
+    .mobi{display: none  !important;}
+ 
+  }
+  @media (max-width: 991px)  { 
+    .web{display: none;}
+    .mobi{display: block  !important;}
+ 
+  }

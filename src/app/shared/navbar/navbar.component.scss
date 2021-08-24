@@ -1,0 +1,118 @@
+
+  .navv{
+    background-color: #171717;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 22px;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  .champ{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  cursor: pointer;  }
+nav ul a{
+    position: relative;
+    text-decoration: none;
+    color: #a39f9b;
+  
+  }
+  
+
+  
+  
+  nav ul>a:hover>li{
+    animation-name: menu_fadein;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  
+  }
+  nav ul>a:hover{
+    animation-name: text_fadein;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    color: #c29f06;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    transition: .3s linear;
+  }
+  ul {
+   
+    list-style-type:none;
+    }
+   li {
+    margin-left:2px;
+    float:left;
+    
+    }
+    ul a{
+        position: relative;
+        text-decoration: none;
+        color: #a39f9b;
+      
+      }
+      ul>a:hover{
+        animation-name: text_fadein;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        color: #c29f06;
+        -webkit-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        transition: .3s linear;
+      }
+    @media screen and (min-width: 993px){
+        .divblock{
+          display: block;
+        }
+      }
+      @media (max-width: 992px){
+        .divblock{
+          display: none;
+        }
+      }
+      .km:hover{
+        border-bottom: 3px solid rgb(230, 142, 0);   
+        color:rgb(255, 255, 255)
+    }
+    .km:focus{box-shadow: 0 0 5px #dadada,
+      0 0 10px #dadada,
+      0 0 30px #dadada,
+      0 0 60px #dadada,
+      0 0 120px #dadada ;
+  background: #dadada !important; 
+  color: black;
+  
+    }
+    #outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+#Gm4{
+  height:70px
+}
+.ti{
+  display: inline-block;
+  border-radius: 3px;
+  padding: .5vw 2vw;
+  background: linear-gradient(
+0deg
+,#d86600 -23%,#fac645,#d86600 123%);
+  color: var(--textColorOnBrandColor);
+  white-space: nowrap;
+}
+button:focus{
+  border: none;
+}
