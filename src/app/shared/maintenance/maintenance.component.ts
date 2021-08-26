@@ -15,11 +15,11 @@ export class MaintenanceComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.element2 = document.getElementById('ftr')!
-    this.element = document.getElementById('hdweb')!
+    this.element2 = document.getElementById('ftr')
+    this.element = document.getElementById('hdweb')
     // this.element3 = document.getElementById('hd')
     
-    this.element4 = document.getElementById('hdmob')!
+    this.element4 = document.getElementById('hdmob')
     console.log(this.element4)
     this.element.style.display = "none"
     //  this.element3.style.display = "none"

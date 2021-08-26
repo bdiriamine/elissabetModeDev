@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { TermsandconditionsComponent } from './termsandconditions/termsandconditions.component';
+import { ChatmobileComponent } from './chatmobile/chatmobile.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TermsandconditionsComponent } from './termsandconditions/termsandcondit
     FooterComponent,
     NotfoundComponent,
     MaintenanceComponent,
-    TermsandconditionsComponent
+    TermsandconditionsComponent,
+    ChatmobileComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,6 @@ import { TermsandconditionsComponent } from './termsandconditions/termsandcondit
     NgbModule,
     
   ],
-  exports: [NavbarComponent,HeaderComponent,HeaderMobileComponent, CarrouselComponent, FooterComponent, MaintenanceComponent, NotfoundComponent, TermsandconditionsComponent]
+  exports: [NavbarComponent,HeaderComponent,HeaderMobileComponent, CarrouselComponent, FooterComponent, MaintenanceComponent, NotfoundComponent, TermsandconditionsComponent,ChatmobileComponent],
 })
 export class SharedModule { }

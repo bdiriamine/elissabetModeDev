@@ -1,12 +1,12 @@
 <div class="container-fluid" style="height: 60px;">
     <div class=" row divdispkmobile "  style=" color: #292b2c; padding-top: 2%;padding-bottom: 1%; background-color: #1d1d1d;height: 60px;">
         <div class="col-md-6 col-sm-6 col-6  logo-wrap"   >
-          <a href="#nav-mobile"  onclick="document.getElementById('nav-mobile').style.display='block'"class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up" style="margin-left: 2%;border-radius: 5px;">
+          <a   onclick="document.getElementById('nav-mobile').style.display='block'"class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up" style="margin-left: 2%;border-radius: 5px;">
             <i class="fa fa-navicon" ></i>
           </a>
     
           <h1 class="site-logo">
-            <a href="" title="Carthagebet">
+            <a href="/home" title="Carthagebet">
               <img src="../../../assets/logo.png" alt="Carthagebet">
             </a>
           </h1>
@@ -143,7 +143,7 @@
       <!-- Button togl left mobile-->
       <div id="nav-mobile" class=" menuleft  divdispkmobile"  >
         <div class="mm-navbar mm-navbar-top mm-navbar-top-1 mm-navbar-size-1 mm-hasbtns" style="height: 40px;background-color: #1a1a1a;position: fixed;width: 76%;">
-          <a class="mm-prev mm-btn mm-hidden"></a><a class="mm-close mm-btn close" onclick="document.getElementById('nav-mobile').style.display='none'" href="#mm-0"></a>
+          <a class="mm-prev mm-btn mm-hidden"></a><a class="mm-close mm-btn close" onclick="document.getElementById('nav-mobile').style.display='none'" ></a>
       </div>
      
       <div style="background-color: #1c1c1c;height: 93px;">
@@ -164,7 +164,7 @@
             <li><a href="#mm-2" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'"><span class="Spacer"><i class="fa fa-language" style="color: #d86600;margin-right: 2%;"></i>English				</span></a></li>
            
           </ul>
-           <button class="chtbot">
+           <button class="chtbot" onclick="document.getElementById('nav-mobile').style.display='none'" (click)="chat()">
             <i class="fas fa-robot" style="font-size:27px"></i>
            </button>
         </div>
