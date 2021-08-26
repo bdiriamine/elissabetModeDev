@@ -14,7 +14,13 @@ import { AuthService } from 'src/app/core/authService/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-socket: io.Socket;
+  loginForm !: FormGroup
+  isLoggedIn = false;
+  username
+
+
+
+  socket: io.Socket;
   token = localStorage.getItem("token");
   SOC_URL = 'https://africano365.tn:81';
   id: any;
@@ -22,10 +28,9 @@ socket: io.Socket;
   bloque: boolean;
   isSubmitted = false;
   loading = false;
-  loginForm: FormGroup;
+  // loginForm: FormGroup;
   date: Date;
   authboluser = false;
-  username: any 
   UserPlayer: any;
   userplayer: User = {
     id: undefined,
@@ -38,32 +43,52 @@ socket: io.Socket;
 
   myOB = Observable.create((observer: Observer<any>) => {
 
-      this.socket.on('balance', function (data:any) {
-        if(data.balance==-1){
-          localStorage.clear()
-          Swal.fire({
-            toast: true,
-            position: 'top',
-            showConfirmButton: false,
-            icon: 'error',
-            timerProgressBar:   false,
-            timer: 5000,
-            title: "l'utilisateur est déjà connecté dans une autre appareil, merci de bien vérifier...."
-          })
-          setTimeout(()=>{                           //<<<---using ()=> syntax
-            window.location.reload()
-       }, 5000);
+    this.socket.on('balance', function (data: any) {
+      if (data.balance == -1) {
+        localStorage.clear()
+        Swal.fire({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          icon: 'error',
+          timerProgressBar: false,
+          timer: 5000,
+          title: "l'utilisateur est déjà connecté dans une autre appareil, merci de bien vérifier...."
+        })
+        setTimeout(() => {                           //<<<---using ()=> syntax
+          window.location.reload()
+        }, 5000);
 
-        }
+      }
 
-        observer.next(data)
-        this.score= data.balance
-        this.bloque = data.blocked
-     });
+      observer.next(data)
+      this.score = data.balance
+      this.bloque = data.blocked
+    });
 
   })
 
-  constructor(private authService: AuthService, private router: Router,) {
+  constructor(private authServ: AuthService, private router: Router,) {
+    this.authServ.isLoggedIn();
+    this.authServ.user.subscribe((userr: any) => {
+      console.log("aaaaaaaaaaa", userr);
+
+      this.username = userr.username
+      localStorage.setItem("name", this.username)
+
+    })
+    console.log("fdezezezezezezezezezezezez", this.username)
+
+    if (!this.username) {
+      this.username = localStorage.getItem("username")
+    }
+    this.authServ.castSignedIn.subscribe((res: any) => {
+      if (res == true) {
+        this.isLoggedIn = true;
+      } else {
+        this.isLoggedIn = false;
+      }
+    })
   }
   closeScroll() {
     const element = document.getElementById('divToStyle')
@@ -81,12 +106,17 @@ socket: io.Socket;
   }
 
   ngOnInit() {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
+    })
 
-    this.loginForm = this.createFormGroup();
+    //********************************** */
+
     this.UserPlayer = JSON.parse(localStorage.getItem("Users"));
     this.username = localStorage.getItem('user');
-    if( this.username == null)
-    this.username =''
+    if (this.username == null)
+      this.username = ''
     this.connect()
     if (this.UserPlayer) {
       this.authboluser = true
@@ -116,7 +146,6 @@ socket: io.Socket;
   }
 
 
-  get formControls() { return this.loginForm.controls; }
   createFormGroup(): FormGroup {
     return new FormGroup({
       username: new FormControl("", [Validators.required, Validators.minLength(1)]),
@@ -189,34 +218,42 @@ socket: io.Socket;
     const expiry = decoded.exp
     return (Math.floor((new Date).getTime() / 1000)) >= expiry;
   }
-  login(): void {
-    this.isSubmitted = true;
-    this.loading = true;
-    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(res => {
-      if (res) {
-        const myObjStr = JSON.stringify(res);
-        localStorage.setItem('token', JSON.parse(myObjStr).token);
-        this.userplayer.id = JSON.parse(myObjStr).user.id;
-        this.userplayer.username = JSON.parse(myObjStr).user.username;
-        this.userplayer.agent = JSON.parse(myObjStr).user.useragent;
-        this.userplayer.password = JSON.parse(myObjStr).user.userpass;
-        this.userplayer.score = JSON.parse(myObjStr).user.score;
-        localStorage.setItem('dx', this.userplayer.id);
-        localStorage.setItem('user', this.userplayer.username);
-        localStorage.setItem('score', this.userplayer.score);
-      }
-      else {
-        this.loading = false;
-        Swal.fire({
-          toast: true,
-          position: 'top',
-          showConfirmButton: false,
-          icon: 'error',
-          timerProgressBar: false,
-          timer: 5000,
-          title: "Nom d'utilisateur ou Mot de passe incorrect !"
-        })
-      }
-    }, err => { });
+  // login(): void {
+  //   this.isSubmitted = true;
+  //   this.loading = true;
+  //   this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(res => {
+  //     if (res) {
+  //       const myObjStr = JSON.stringify(res);
+  //       localStorage.setItem('token', JSON.parse(myObjStr).token);
+  //       this.userplayer.id = JSON.parse(myObjStr).user.id;
+  //       this.userplayer.username = JSON.parse(myObjStr).user.username;
+  //       this.userplayer.agent = JSON.parse(myObjStr).user.useragent;
+  //       this.userplayer.password = JSON.parse(myObjStr).user.userpass;
+  //       this.userplayer.score = JSON.parse(myObjStr).user.score;
+  //       localStorage.setItem('dx', this.userplayer.id);
+  //       localStorage.setItem('user', this.userplayer.username);
+  //       localStorage.setItem('score', this.userplayer.score);
+  //     }
+  //     else {
+  //       this.loading = false;
+  //       Swal.fire({
+  //         toast: true,
+  //         position: 'top',
+  //         showConfirmButton: false,
+  //         icon: 'error',
+  //         timerProgressBar: false,
+  //         timer: 5000,
+  //         title: "Nom d'utilisateur ou Mot de passe incorrect !"
+  //       })
+  //     }
+  //   }, err => { });
+  // }
+  login() {
+    this.authServ.login(this.loginForm.controls['username'].value, this.loginForm.controls['password'].value);
+  }
+  logout() {
+    this.authServ.logout();
+    // this.settings = false;
+    this.router.navigate(["/"])
   }
 }

@@ -35,8 +35,8 @@ import { ChatmobileComponent } from './chatmobile/chatmobile.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    
+
   ],
-  exports: [NavbarComponent,HeaderComponent,HeaderMobileComponent, CarrouselComponent, FooterComponent, MaintenanceComponent, NotfoundComponent, TermsandconditionsComponent,ChatmobileComponent],
+  exports: [NavbarComponent, HeaderComponent, HeaderMobileComponent, CarrouselComponent, FooterComponent, MaintenanceComponent, NotfoundComponent, TermsandconditionsComponent, ChatmobileComponent],
 })
 export class SharedModule { }

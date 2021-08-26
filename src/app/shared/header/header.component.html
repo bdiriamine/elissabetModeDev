@@ -1,4 +1,4 @@
-<div class="container-fluid">   
+<div class="container-fluid">
   <div class="row divblock" style="background-color: #1d1d1d;height:180px">
     <div class="col-md-6" style="margin-bottom: 1%;">
       <a [routerLink]="['/home']">
@@ -10,45 +10,45 @@
 
 
 
-    <div class="col-md-6 col-6" style="display: flex;
+    <div *ngIf="!isLoggedIn" class="col-md-6 col-6" style="display: flex;
     align-items: center;
     justify-content: center;">
-        <form class=" container form-inline form-login flex-lg-nowrap" [formGroup]="loginForm" (ngSubmit)="login()"
-          style="font-family: 'Roboto', sans-serif;font-size: 17px;" novalidate>
-          <div>
-            <div class="left-inner-addon input-container">
-              <i class="fa fa-user icon" style="font-size: 17px;"></i>
-              <input type="text" class="form-control login-username input-field" placeholder="Username" required=""
-                style="background-color: #404040; border-color: #404040;color: rgb(165, 165, 165);border-radius: 5px;background-color: white;"
-                formControlName="username">
-            </div>
+      <form class=" container form-inline form-login flex-lg-nowrap" [formGroup]="loginForm" (ngSubmit)="login()"
+        style="font-family: 'Roboto', sans-serif;font-size: 17px;" novalidate>
+        <div>
+          <div class="left-inner-addon input-container">
+            <i class="fa fa-user icon" style="font-size: 17px;"></i>
+            <input type="text" class="form-control login-username input-field" placeholder="Username" required=""
+              style="background-color: #404040; border-color: #404040;color: rgb(165, 165, 165);border-radius: 5px;background-color: white;"
+              formControlName="username">
           </div>
-          <div style="margin-left: 1%;">
-            <div class="left-inner-addon input-container">
-              <i class="fas fa-lock" style="font-size: 15px;"></i>
-              <input type="password" class="form-control login-password input-field" placeholder="Password" required=""
-                style="background-color: #404040; border-color: #404040;color: rgb(179, 178, 178);background-color: white;border-radius: 5px;"
-                formControlName="password">
-              <!-- <a routerLink="/forgot-password" title="Forgot password?" class="forgot-password-desktop"
+        </div>
+        <div style="margin-left: 1%;">
+          <div class="left-inner-addon input-container">
+            <i class="fas fa-lock" style="font-size: 15px;"></i>
+            <input type="password" class="form-control login-password input-field" placeholder="Password" required=""
+              style="background-color: #404040; border-color: #404040;color: rgb(179, 178, 178);background-color: white;border-radius: 5px;"
+              formControlName="password">
+            <!-- <a routerLink="/forgot-password" title="Forgot password?" class="forgot-password-desktop"
                 style="font-family: 'Roboto', sans-serif;font-weight: bolder;">
                 Forgot password? </a> -->
-            </div>
           </div>
-          <div class="left-inner-addon input-container" style="margin-left: 1%;">
-            <button type="submit" class="btn mr-sm-2 mb-sm-0 btn-login-form" data-original-title="" title=""
-              [disabled]="!loginForm.valid"
-              style=" background-color: transparent;opacity: 100%;height: 30px; font-weight: bold;font-size: 15px; border: 1px solid #eda12a;color: #eda12a;">LOGIN</button>
-            <!-- <a routerLink="/register"  title="Register" class="btn btn-secondary-fancy btn-register" style="height: 30px; font-weight: bold;font-size: 15px;background: linear-gradient(#d86600,#fac645,#d86600);color: rgb(29, 29, 29);border-radius: 5px;">Register</a> -->
-          </div>
-        </form>
-    
+        </div>
+        <div class="left-inner-addon input-container" style="margin-left: 1%;">
+          <button type="submit" class="btn mr-sm-2 mb-sm-0 btn-login-form" data-original-title="" title=""
+            [disabled]="!loginForm.valid"
+            style=" background-color: transparent;opacity: 100%;height: 30px; font-weight: bold;font-size: 15px; border: 1px solid #eda12a;color: #eda12a;">LOGIN</button>
+          <!-- <a routerLink="/register"  title="Register" class="btn btn-secondary-fancy btn-register" style="height: 30px; font-weight: bold;font-size: 15px;background: linear-gradient(#d86600,#fac645,#d86600);color: rgb(29, 29, 29);border-radius: 5px;">Register</a> -->
+        </div>
+      </form>
+
     </div>
 
 
-    
 
 
-    <div class="col-md-6" style=" margin-top: 4%;" *ngIf="username">
+
+    <div *ngIf="isLoggedIn" class="col-md-6" style=" margin-top: 4%;">
       <div class="dropdown" style="padding-left: 45%">
         <div class="btn-group user-hud-balance show">
           <button id="user-hud-balance-btn" type="button" class="  btn btn-white-outline dropdown-toggle"
@@ -81,7 +81,7 @@
             <li class="dropdown-item" style="font-size:12px;"><span class="js-sports-bonus" style="padding-left: 3%;">
                 <a routerLink="/my-account"> My account</a> </span></li>
             <li class="dropdown-item" style="font-size:12px;"><span class="js-casino-bonus" style="padding-left: 3%;"
-                (click)="exit()">Logout</span></li>
+                (click)="logout()">Logout</span></li>
           </div>
         </div>
       </div>
