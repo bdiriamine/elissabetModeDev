@@ -1,9 +1,12 @@
-<app-header class="web" id="hdmob"></app-header>
-<app-header-mobile class="mobi" id="hdweb"></app-header-mobile>
-<app-carrousel></app-carrousel>
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<button [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top web">
-  <i class="fa fa-angle-double-up" style="font-size: 25px;" aria-hidden="true"></i>
-</button>
-<app-footer></app-footer>
+<div id="divToStyle">
+  <app-header id="hdweb" class="web" ></app-header>
+  <app-header-mobile id="hdmobi" class="mobi" ></app-header-mobile>
+  <app-carrousel id="caro" style="z-index: 2;"></app-carrousel>
+  <app-navbar id="navbar"></app-navbar>
+  <router-outlet></router-outlet>
+</div>
+  <button id="btntop" [ngClass]="{'show-scroll': showScroll}" (click)="scrollToTop()" class="scroll-to-top web">
+    <i class="fa fa-angle-double-up" style="font-size: 25px;" aria-hidden="true"></i>
+  </button>
+  <app-footer id="ftr" style="bottom: 0;"></app-footer>
+

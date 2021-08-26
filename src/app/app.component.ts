@@ -31,18 +31,23 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    var burgerBtn = document.getElementById('burgerBtn')!;
-    var mobile = document.getElementById('mobile')!;
-    var demo1 = document.getElementById('demo1')!;
-    burgerBtn.addEventListener('click', function () {
-      mobile.classList.toggle('navigation');
-    }, false);
+    try{
+      var burgerBtn = document.getElementById('burgerBtn')!;
+      var mobile = document.getElementById('mobile')!;
+      var demo1 = document.getElementById('demo1')!;
+      burgerBtn.addEventListener('click', function () {
+        mobile.classList.toggle('navigation');
+      }, false);
+  
+      demo1.addEventListener('click', function () {
+        demo1.classList.add('active');
+        mobile.classList.add('demo1');
+        mobile.classList.remove('demo2', 'demo3', 'navigation');
+      }, false);
+    }catch{
 
-    demo1.addEventListener('click', function () {
-      demo1.classList.add('active');
-      mobile.classList.add('demo1');
-      mobile.classList.remove('demo2', 'demo3', 'navigation');
-    }, false);
+    }
+  
   }
 
   scrollToTop() {

@@ -1,12 +1,12 @@
 <div class="container-fluid" style="height: 60px;">
     <div class=" row divdispkmobile "  style=" color: #292b2c; padding-top: 2%;padding-bottom: 1%; background-color: #1d1d1d;height: 60px;">
         <div class="col-md-6 col-sm-6 col-6  logo-wrap"   >
-          <a  onclick="document.getElementById('nav-mobile').style.display='block'"class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up" style="margin-left: 2%;border-radius: 5px;">
+          <a   (click)="closeScroll()"  onclick="document.getElementById('nav-mobile').style.display='block'"class="btn-mobile-trigger btn btn-white-outline btn-sm hidden-lg-up" style="margin-left: 2%;border-radius: 5px;">
             <i class="fa fa-navicon" ></i>
           </a>
     
           <h1 class="site-logo">
-            <a href="/home" title="Carthagebet">
+            <a href="" title="Carthagebet">
               <img src="../../../assets/logo.png" alt="Carthagebet">
             </a>
           </h1>
@@ -136,45 +136,32 @@
           </li>
           </ul>
         </div>
-    
-      
-    
-    
       <!-- Button togl left mobile-->
-      <div id="nav-mobile" class=" menuleft  divdispkmobile"  style="height: 100%;
-      width: 100%;
-      position: fixed;
-      top: O;
-      left: 0;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 40px;
-      z-index: 99;
-  }" >
-        <div class="mm-navbar mm-navbar-top mm-navbar-top-1 mm-navbar-size-1 mm-hasbtns" style="height: 40px;background-color: #1a1a1a;position: fixed;width: 76%;">
+      <div id="nav-mobile" class=" menuleft  divdispkmobile" style="height: 93.5vh;"  >
+        <div class="mm-navbar mm-navbar-top mm-navbar-top-1 mm-navbar-size-1 mm-hasbtns" style="height: 80px;background-color: #1a1a1a;position: fixed;width: 76%;z-index: 999;left:0">
           <a class="mm-prev mm-btn mm-hidden"></a><a class="mm-close mm-btn close" onclick="document.getElementById('nav-mobile').style.display='none'" ></a>
       </div>
      
-      <div style="background-color: #1c1c1c;height: 93px;">
+      <div style="background-color: #1c1c1c;;background-color: #1a1a1a;position: fixed;width: 76%;left:0;z-index: 999;top: 6%; height: 18%;">
             <img src="../../../assets/logo.png" alt="Carthagebet" class="logo-mobile" style="padding-top: 20px;">
         
         </div>
-        <div style="background-color: #292b2c;color: rgb(221, 221, 221)">
+        <div style="background-color: #292b2c;color: rgb(221, 221, 221);;position: fixed;width: 76%;z-index: 999;left:0;top: 23%;height: 78%;">
           <ul class=" list" style="font-family: 'Roboto', sans-serif; font-weight: 700;font-size: 14px;margin:0;padding:0">
             <li><a  routerLink="home"  title="aller à la section 1" onclick="document.getElementById('nav-mobile').style.display='none'"> Home				</a></li>
             <li><a  routerLink=""  title="aller à la section 1" onclick="document.getElementById('nav-mobile').style.display='none'"> Sports Betting				</a></li>
             <li><a routerLink="/live" title="aller à la section 2" onclick="document.getElementById('nav-mobile').style.display='none'">Live Betting	</a></li>
             <li><a routerLink="/casino" title="aller à la section 3" onclick="document.getElementById('nav-mobile').style.display='none'">Casino</a></li>
             <li><a routerLink="/livecasino"title="aller à la section 4" onclick="document.getElementById('nav-mobile').style.display='none'"> Live Casino	</a></li>
-          <!-- -->  <li><a routerLink="/minigames"title="aller à la section 4" onclick="document.getElementById('nav-mobile').style.display='none'"> Mini Games	</a></li>
+            <li><a routerLink="/minigames"title="aller à la section 4" onclick="document.getElementById('nav-mobile').style.display='none'"> Mini Games	</a></li>
             <li><a routerLink="/virtual" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'">Virtual</a></li>
             <li><a routerLink="" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'">Affiliates</a></li>
             <li><a routerLink="terms-conditions" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'"> Terms &amp; Conditions</a></li>
             <li><a href="#mm-2" title="aller à la section 5" onclick="document.getElementById('nav-mobile').style.display='none'"><span class="Spacer"><i class="fa fa-language" style="color: #d86600;margin-right: 2%;"></i>English				</span></a></li>
            
           </ul>
-           <button class="chtbot" onclick="document.getElementById('nav-mobile').style.display='none'" (click)="chat()">
-            <i class="fas fa-robot" style="font-size:27px"></i>
+           <button routerLink="/chat" (click)="OpenScroll()" class="chtbot" onclick="document.getElementById('nav-mobile').style.display='none'">
+            <i class="fa fa-comments-o" aria-hidden="true" style="font-size:27px;color: white;"></i>
            </button>
         </div>
        

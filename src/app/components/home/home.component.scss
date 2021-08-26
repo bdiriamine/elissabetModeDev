@@ -1,5 +1,8 @@
 
 @media (min-width: 992px)  { 
+  .tpcas{
+    font-size:32px
+  }
     .web{display: block;}
     .mobi{display: none  !important;}
     .ftboby{
@@ -92,6 +95,9 @@ ames {
 }
   }
   @media (max-width: 991px)  { 
+    .tpcas{
+      font-size:24px
+    }
     .web{display: none;}
     .mobi{display: block  !important;}
     .game-card {

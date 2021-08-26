@@ -134,17 +134,16 @@ ngOndestry(){
 }
 closeScroll(){
   const element = document.getElementById('divToStyle')
- 
-  element.style.overflowY = "hidden"
-  element.style.height = "100%"
-
+    element.style.overflowX  = "hidden"
+    element.style.height = "100%"
+    console.log("hello")
 }
 OpenScroll(){
   const element = document.getElementById('divToStyle')
 
   element.style.overflowY = "auto"
   element.style.height = "100%"
-
+  console.log("helsslo")
 }
 exit(){
   this.router.navigate([""]);
