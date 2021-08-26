@@ -132,6 +132,20 @@ ngOndestry(){
   element2.style.display = "none"
   
 }
+closeScroll(){
+  const element = document.getElementById('divToStyle')
+ 
+  element.style.overflowY = "hidden"
+  element.style.height = "100%"
+
+}
+OpenScroll(){
+  const element = document.getElementById('divToStyle')
+
+  element.style.overflowY = "auto"
+  element.style.height = "100%"
+
+}
 exit(){
   this.router.navigate([""]);
   localStorage.clear();
